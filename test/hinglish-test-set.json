@@ -1,0 +1,21 @@
+{
+  "purpose": "15-utterance Hinglish/code-mixed test set (council Day-1 gate). Run each through the pipeline — ideally once clean, once with mandi ambience layered — and check the expected entity survived in the transcript.",
+  "usage": "Say each aloud in the app, or synthesize via /api/tts and feed the WAV to /api/stt. Verify expected_keywords appear in transcript (allowing Devanagari OR romanized forms).",
+  "utterances": [
+    { "id": 1, "text": "पीएम किसान की किस्त नहीं आई है, क्या करूँ?", "scheme": "pmkisan", "expected_keywords": ["किसान", "किस्त"] },
+    { "id": 2, "text": "pm kisan kitne paise milte hain saal mein?", "scheme": "pmkisan", "expected_keywords": ["किसान", "kisan"] },
+    { "id": 3, "text": "आयुष्मान कार्ड कैसे बनवाएं?", "scheme": "ayushman", "expected_keywords": ["आयुष्मान", "कार्ड"] },
+    { "id": 4, "text": "मेरी माँ का ऑपरेशन है, ayushman mein 5 lakh ka ilaaj free hai kya?", "scheme": "ayushman", "expected_keywords": ["ayushman", "आयुष्मान", "लाख"] },
+    { "id": 5, "text": "आवास योजना में घर बनाने के लिए कितने पैसे मिलते हैं?", "scheme": "pmayg", "expected_keywords": ["आवास", "घर"] },
+    { "id": 6, "text": "ghar banane ke liye sarkari paise chahiye, kya pmay apply kar sakte hain?", "scheme": "pmayg", "expected_keywords": ["pmay", "आवास", "ghar"] },
+    { "id": 7, "text": "अटल पेंशन के लिए कौन आवेदन कर सकता है?", "scheme": "apy", "expected_keywords": ["अटल", "पेंशन"] },
+    { "id": 8, "text": "main 35 saal ka hoon, atal pension mein kitni kist jama karni hogi?", "scheme": "apy", "expected_keywords": ["atal", "पेंशन", "pension"] },
+    { "id": 9, "text": "e-shram card kaise banaye?", "scheme": "eshram", "expected_keywords": ["श्रम", "eshram", "shram"] },
+    { "id": 10, "text": "मजदूरी वाले श्रमिक के लिए ई-श्रम कार्ड मुफ्त बनता है?", "scheme": "eshram", "expected_keywords": ["श्रम", "मजदूर"] },
+    { "id": 11, "text": "मनरेगा का जॉब कार्ड कहाँ बनवाएं?", "scheme": "mgnrega", "expected_keywords": ["मनरेगा", "नरेगा", "job"] },
+    { "id": 12, "text": "nrega ki majdoori nahi mili, complaint karni hai", "scheme": "mgnrega", "expected_keywords": ["nrega", "मनरेगा", "मजदूरी"] },
+    { "id": 13, "text": "मेरे खाते में दो हज़ार रुपये की किस्त नहीं आई, शिकायत दर्ज करो", "scheme": "pmkisan", "expected_keywords": ["किस्त", "खाते", "शिकायत"] },
+    { "id": 14, "text": "अस्पताल वाले कह रहे पैसे दो, आयुष्मान वाला कार्ड चलेगा या नहीं?", "scheme": "ayushman", "expected_keywords": ["आयुष्मान", "अस्पताल", "कार्ड"] },
+    { "id": 15, "text": "दस हज़ार रुपये की मजदूरी पक्की करवा दो, कल थ्री बजे काम है", "scheme": "mgnrega", "expected_keywords": ["मजदूरी", "काम"] }
+  ]
+}

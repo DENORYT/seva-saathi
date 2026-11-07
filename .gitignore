@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+scripts/tone16k.wav
+scripts/tts_req.json
+scripts/tts_stream.txt

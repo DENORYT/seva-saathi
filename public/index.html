@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>सेवा साथी · Seva Saathi — सरकारी योजना हेल्पलाइन</title>
+<!-- Phosphor icons (allowed icon library) -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════ SCREEN 1: DIALER ══════════ -->
+<section id="screen-dial" class="screen active">
+  <div class="phone">
+    <header class="brand">
+      <div class="logo">से</div>
+      <div>
+        <h1>सेवा साथी</h1>
+        <p class="sub">सरकारी योजनाओं की बोलती हेल्पलाइन · Voice helpline for government schemes</p>
+      </div>
+    </header>
+
+    <div class="scheme-chips" id="schemeChips"></div>
+
+    <button id="callBtn" class="call-btn" aria-label="कॉल करें">
+      <span class="call-icon"><i class="ph ph-phone-call"></i></span>
+      <span class="call-label">कॉल करें<small>Call Seva Saathi</small></span>
+    </button>
+
+    <div class="mandi-row">
+      <label class="mandi-toggle">
+        <input type="checkbox" id="mandiToggle">
+        <span class="slider"></span>
+        <span class="mandi-label">
+          <i class="ph ph-speaker-high" style="color:var(--amber);margin-right:2px"></i> मंडी मोड
+          <small>market noise mixed into the call audio — live noise-robustness proof</small>
+        </span>
+      </label>
+    </div>
+
+    <div class="stats-strip" id="statsStrip">
+      <span>टेस्ट कॉल <b id="statCalls">0</b></span>
+      <span>शोर में <b id="statNoise">0</b></span>
+      <span>भाषा मिश्रण <b id="statMix">n/a</b></span>
+    </div>
+
+    <p class="foot-note">डेमो · सिंथेटिक डेटा · कोई वास्तविक फ़ोन नंबर या आधार उपयोग नहीं होता<br>Built on Gnani AI Prisma v2.5 (STT) + Timbre v2.5 (TTS) + Evon v3.3 (LLM)</p>
+  </div>
+</section>
+
+<!-- ══════════ SCREEN 2: RINGING ══════════ -->
+<section id="screen-ring" class="screen">
+  <div class="phone center">
+    <div class="pulse-ring"></div>
+    <div class="pulse-ring delay"></div>
+    <div class="avatar">से</div>
+    <h2>सेवा साथी</h2>
+    <p id="ringStatus">कनेक्ट हो रहा है… <small>connecting</small></p>
+    <button id="cancelBtn" class="end-btn small" title="रद्द करें"><i class="ph ph-x"></i></button>
+  </div>
+</section>
+
+<!-- ══════════ SCREEN 3: IN CALL ══════════ -->
+<section id="screen-call" class="screen">
+  <div class="phone call-phone">
+    <header class="call-header">
+      <span class="live-dot"></span>
+      <span>कॉल चालू</span>
+      <span id="callTimer">00:00</span>
+      <span id="mandiBadge" class="mandi-badge hidden"><i class="ph ph-speaker-high"></i> मंडी मोड</span>
+      <button id="endCallBtn" class="end-btn" title="कॉल समाप्त करें"><i class="ph ph-x"></i></button>
+    </header>
+
+    <div class="transcript" id="transcript">
+      <div class="agent-greet" id="greetBubble">नमस्ते! सेवा साथी में आपका स्वागत है।</div>
+    </div>
+
+    <div class="wavebars" id="wavebars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="talk-row">
+      <button id="talkBtn" class="talk-btn"><span class="talk-main"><i class="ph ph-microphone"></i>दबाकर बोलें</span><small>hold to talk</small></button>
+      <button id="askBtn" class="ask-btn"><i class="ph ph-keyboard"></i> लिखकर पूछें<small>type instead</small></button>
+    </div>
+    <input id="typeInput" class="type-input hidden" placeholder="अपना सवाल लिखें… (e.g. pm kisan ki kist nahi aayi)">
+  </div>
+</section>
+
+<!-- ══════════ SCREEN 4: CALL END ══════════ -->
+<section id="screen-end" class="screen">
+  <div class="phone wide">
+    <header class="end-header">
+      <h2>कॉल समाप्त · <span id="endDuration">00:00</span></h2>
+      <button id="againBtn" class="again-btn"><i class="ph ph-phone-call"></i> फिर कॉल करें</button>
+    </header>
+
+    <div class="end-grid">
+      <div class="panel">
+        <h3><i class="ph ph-scroll" style="color:var(--accent)"></i> कॉल सारांश</h3>
+        <div id="endTranscript" class="end-transcript"></div>
+        <div class="sms-box">
+          <b><i class="ph ph-chat-circle"></i> SMS सारांश</b>
+          <p id="smsSummary">n/a</p>
+        </div>
+        <div id="noiseCompare" class="noise-compare hidden">
+          <b><i class="ph ph-speaker-high"></i> शोर-प्रूफ परीक्षण (मंडी मोड)</b>
+          <p>शोर के बीच एजेंट ने यह सुना: <em id="noiseTranscript">n/a</em></p>
+          <p class="muted">Prisma v2.5 ने मंडी के शोर में भी हिंग्लिश पकड़ी · transcribed through market noise</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3><i class="ph ph-file-text" style="color:var(--accent)"></i> शिकायत/आवेदन पत्र <small>voice to action</small></h3>
+        <button id="letterBtn" class="letter-btn"><i class="ph ph-pencil-simple-line"></i> पत्र बनाएं · Generate Letter</button>
+        <div id="letterHolder" class="letter-holder hidden">
+          <iframe id="letterFrame" title="letter preview"></iframe>
+          <div class="letter-actions">
+            <button id="letterPrint"><i class="ph ph-printer"></i> प्रिंट / PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="end-stats" id="endStats"></div>
+  </div>
+</section>
+
+<div id="toast" class="toast hidden"></div>
+<script src="app.js"></script>
+</body>
+</html>
