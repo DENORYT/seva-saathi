@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<title>Seva Saathi — The Problem</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+  :root { --accent:hsl(152 58% 46%); --label:#f5f5f7; --secondary:#98989d; }
+  * { margin:0; box-sizing:border-box; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI","Nirmala UI","Noto Sans Devanagari",sans-serif;
+    height:100vh; display:flex; align-items:center; justify-content:center; color:var(--label);
+    background:radial-gradient(900px 600px at 15% -10%, hsl(152 45% 22% / .55), transparent 60%),
+               radial-gradient(1100px 700px at 90% 110%, hsl(210 40% 18% / .45), transparent 55%), #0b0b0f;
+    -webkit-font-smoothing:antialiased; letter-spacing:-.01em;
+  }
+  .card { text-align:center; max-width:880px; padding:0 40px; animation:in 1s cubic-bezier(.32,.72,0,1); }
+  @keyframes in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  .line { font-size:42px; font-weight:800; letter-spacing:-.02em; line-height:1.4; }
+  .line b { color:var(--accent); }
+  .sub { font-size:19px; color:var(--secondary); margin-top:24px; line-height:1.7; }
+  .chips { display:flex; gap:10px; justify-content:center; margin-top:34px; flex-wrap:wrap; }
+  .chip { display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--secondary);
+    border:1px solid rgba(255,255,255,.1); background:rgba(28,28,30,.6); padding:10px 16px; border-radius:999px; }
+  .chip i { color:var(--accent); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <p class="line">स्कीम कागज़ तक पहुँचती है,<br>आदमी तक <b>आवाज़</b> नहीं पहुँचती।</p>
+    <p class="sub">पोर्टल मानते हैं कि आप टाइप कर सकते हैं, अंग्रेज़ी पढ़ सकते हैं, फॉर्म भर सकते हैं।<br>गाँव का करोड़ों लोग बोल सकता है — और बोलकर आज तक सरकारी काम अधूरा रहता है।</p>
+    <div class="chips">
+      <span class="chip"><i class="ph ph-pen-nib"></i> literacy assumed</span>
+      <span class="chip"><i class="ph ph-globe"></i> English-first portals</span>
+      <span class="chip"><i class="ph ph-phone-x"></i> IVR menus, no answers</span>
+    </div>
+  </div>
+</body>
+</html>

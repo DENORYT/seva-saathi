@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<title>Seva Saathi — How it works</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+  :root { --accent:hsl(152 58% 46%); --label:#f5f5f7; --secondary:#98989d; }
+  * { margin:0; box-sizing:border-box; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI","Nirmala UI","Noto Sans Devanagari",sans-serif;
+    height:100vh; display:flex; align-items:center; justify-content:center; color:var(--label);
+    background:radial-gradient(900px 600px at 15% -10%, hsl(152 45% 22% / .55), transparent 60%),
+               radial-gradient(1100px 700px at 90% 110%, hsl(210 40% 18% / .45), transparent 55%), #0b0b0f;
+    -webkit-font-smoothing:antialiased; letter-spacing:-.01em;
+  }
+  .card { max-width:960px; padding:0 40px; animation:in 1s cubic-bezier(.32,.72,0,1); }
+  @keyframes in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  h2 { text-align:center; font-size:38px; font-weight:800; letter-spacing:-.02em; margin-bottom:34px; }
+  h2 b { color:var(--accent); }
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .step { border:1px solid rgba(255,255,255,.09); background:rgba(28,28,30,.65); border-radius:22px; padding:22px 18px; }
+  .step i { font-size:30px; color:var(--accent); }
+  .step h3 { font-size:21px; font-weight:700; margin:10px 0 8px; }
+  .step p { font-size:13px; color:var(--secondary); line-height:1.6; }
+  .step b { color:var(--label); font-weight:600; }
+  .foot { text-align:center; margin-top:28px; font-size:13px; color:var(--secondary); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h2>बोलिए। <b>सुनिए। काम पाइए।</b></h2>
+    <div class="steps">
+      <div class="step"><i class="ph ph-microphone"></i><h3>बोलिए</h3><p><b>Prisma v2.5</b> हिंदी-हिंग्लिश सुनता है — मंडी के शोर में भी, देवनागरी + रोमन मिक्स ट्रांसक्रिप्ट।</p></div>
+      <div class="step"><i class="ph ph-brain"></i><h3>पूछिए</h3><p><b>Evon LLM</b> 6 हैंड-वेरिफाइड योजनाओं से जवाब देता है — हर तथ्य के साथ .gov.in साइटेशन।</p></div>
+      <div class="step"><i class="ph ph-speaker-high"></i><h3>सुनिए</h3><p><b>Timbre v2.5</b> जवाब साफ़ हिंदी आवाज़ में बोलता है — स्ट्रीमिंग, बिना रुकावट।</p></div>
+      <div class="step"><i class="ph ph-file-text"></i><h3>काम पाइए</h3><p>कॉल के अंत में <b>तैयार शिकायत पत्र</b> — प्रिंट कीजिए, पंचायत में जमा कीजिए।</p></div>
+    </div>
+    <p class="foot">सब कुछ एक वेब कॉल में · कोई ऐप इंस्टॉल नहीं · कोई टाइपिंग ज़रूरी नहीं</p>
+  </div>
+</body>
+</html>

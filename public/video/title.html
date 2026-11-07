@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<title>Seva Saathi — Demo</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+  :root { --accent:hsl(152 58% 46%); --label:#f5f5f7; --secondary:#98989d; }
+  * { margin:0; box-sizing:border-box; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI","Nirmala UI","Noto Sans Devanagari",sans-serif;
+    height:100vh; display:flex; align-items:center; justify-content:center; color:var(--label);
+    background:radial-gradient(900px 600px at 15% -10%, hsl(152 45% 22% / .55), transparent 60%),
+               radial-gradient(1100px 700px at 90% 110%, hsl(210 40% 18% / .45), transparent 55%), #0b0b0f;
+    -webkit-font-smoothing:antialiased; letter-spacing:-.01em;
+  }
+  .card { text-align:center; max-width:860px; padding:0 40px; animation:in 1s cubic-bezier(.32,.72,0,1); }
+  @keyframes in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  .logo {
+    width:88px; height:88px; border-radius:26px; margin:0 auto 26px;
+    background:linear-gradient(160deg, hsl(152 58% 40%), hsl(160 50% 26%));
+    display:flex; align-items:center; justify-content:center; font-size:40px; font-weight:700;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.28), 0 18px 50px hsl(152 58% 25% / .5);
+  }
+  h1 { font-size:58px; font-weight:800; letter-spacing:-.03em; }
+  .tag { font-size:21px; color:var(--secondary); margin-top:14px; line-height:1.5; }
+  .tag b { color:var(--label); font-weight:600; }
+  .models {
+    display:inline-flex; gap:10px; align-items:center; margin-top:34px;
+    border:1px solid rgba(255,255,255,.1); background:rgba(28,28,30,.6);
+    padding:9px 18px; border-radius:999px; font-size:13px; color:var(--secondary);
+  }
+  .models i { color:var(--accent); }
+  .hashtags { margin-top:16px; font-size:13px; color:#5f7a68; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">से</div>
+    <h1>सेवा साथी</h1>
+    <p class="tag">The voice helpline that ends with a <b>government letter</b>,<br>not just an answer.</p>
+    <div class="models"><i class="ph ph-waveform"></i> Gnani AI · Prisma v2.5 (STT) &nbsp;·&nbsp; Timbre v2.5 (TTS) &nbsp;·&nbsp; Evon v3.3 (LLM)</div>
+    <p class="hashtags">#GnaniAI #GreatIndianAIInternshipChallenge</p>
+  </div>
+</body>
+</html>

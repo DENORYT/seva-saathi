@@ -4,3 +4,7 @@ node_modules/
 scripts/tone16k.wav
 scripts/tts_req.json
 scripts/tts_stream.txt
+video-assets/audio/
+video-assets/takes/
+video-assets/frame_*.jpg
+video-assets/filter.txt

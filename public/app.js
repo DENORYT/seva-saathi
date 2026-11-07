@@ -405,7 +405,7 @@ async function processUserText(text, fromPreset = false) {
       } else if (ev === 'done') {
         (d.citations || []).forEach((c) => citations.push(c));
         if (d.lang_mix && d.lang_mix.devanagari_pct != null) bumpStat('mix', d.lang_mix.devanagari_pct);
-        if (d.degraded) agentB.insertAdjacentHTML('beforeend', '<br><small class="muted">[retrieval mode — LLM key जोड़ें]</small>');
+        if (d.degraded) agentB.insertAdjacentHTML('beforeend', '<br><small class="muted">[verified-corpus mode · हर तथ्य cited]</small>');
       }
     }, S.abort.signal);
   } catch (e) {
